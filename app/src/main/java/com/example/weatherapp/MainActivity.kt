@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         if(data.weatherDescription in weatherIcon) {
             //In case it's night time, show a corresponding image
             if ((data.weatherDescription == "Clear") && ((currentHourIn24Format >= 20 && currentHourIn24Format <= 23) || (currentHourIn24Format >= 0 && currentHourIn24Format <= 4)))
-                Picasso.get().load("https://cdn-icons-png.flaticon.com/512/3026/3026366.png").resize(350, 350)
+                Picasso.get().load("https://cdn-icons-png.flaticon.com/512/3026/3026366.png").resize(350, 350).into(image)
             else
                 Picasso.get().load(weatherIcon[data.weatherDescription]).resize(350, 350)
                     .into(image)
